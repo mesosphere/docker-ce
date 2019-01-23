@@ -13,7 +13,7 @@ install_runc() {
 	fi
 
 	# Do not build with ambient capabilities support
-	RUNC_BUILDTAGS="${RUNC_BUILDTAGS:-"seccomp apparmor selinux $RUNC_NOKMEM"}"
+	RUNC_BUILDTAGS="${RUNC_BUILDTAGS:-"seccomp apparmor selinux nokmem"}"
 
 	echo "Install runc version $RUNC_COMMIT (build tags: $RUNC_BUILDTAGS)"
 	git clone https://github.com/opencontainers/runc.git "$GOPATH/src/github.com/opencontainers/runc"
